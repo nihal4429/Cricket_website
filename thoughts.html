@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thoughts Sharing</title>
+  <style>
+    html {
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1624897174291-1bd715e371d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNyaWNrZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: transparent;
+      height: 100%;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+    
+    .thoughts-container {
+      width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center align content */
+    }
+    
+    .thoughts-container textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+      overflow-y: auto;
+    }
+    
+    .thoughts-container button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .thoughts-list {
+      margin-top: 20px;
+      list-style: none;
+      padding: 0;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    
+    .thoughts-list li {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div class="thoughts-container">
+    <h1>Share Your Thoughts</h1>
+    <textarea id="thought-input" placeholder="Write your thoughts here..."></textarea>
+    <button onclick="addThought()">Share</button>
+    <ul id="thoughts-list" class="thoughts-list"></ul>
+  </div>
+
+  <script>
+    function addThought() {
+      var thoughtInput = document.getElementById('thought-input');
+      var thoughtList = document.getElementById('thoughts-list');
+      var thoughtText = thoughtInput.value;
+
+      if (thoughtText.trim() !== '') {
+        var thoughtItem = document.createElement('li');
+        var codeName = generateCodeName();
+        thoughtItem.textContent = thoughtText + ' - ' + codeName;
+        thoughtItem.style.backgroundColor = generateColor();
+        thoughtList.appendChild(thoughtItem);
+        thoughtInput.value = '';
+
+        // Scroll to the bottom of the container
+        thoughtList.scrollTop = thoughtList.scrollHeight;
+
+        // Adjust container height if necessary
+        adjustContainerHeight();
+      }
+    }
+
+    function adjustContainerHeight() {
+      var thoughtList = document.getElementById('thoughts-list');
+      var containerHeight = thoughtList.offsetHeight;
+
+      if (containerHeight >= 300) {
+        thoughtList.style.height = '300px';
+      } else {
+        thoughtList.style.height = 'auto';
+      }
+    }
+
+    function generateColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function generateCodeName() {
+      var adjectives = ['Happy', 'Sad', 'Excited', 'Confused', 'Calm', 'Energetic', 'Curious', 'Brave'];
+      var nouns = ['Cat', 'Dog', 'Bird', 'Elephant', 'Fish', 'Lion', 'Tiger', 'Monkey'];
+      var adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+      var noun = nouns[Math.floor(Math.random() * nouns.length)];
+      return adjective + ' ' + noun;
+    }
+  </script>
+</body>
+</html>

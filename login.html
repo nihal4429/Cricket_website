@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="login.css">
+  
+  <title>Login</title>
+</head>
+<body>
+  
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Cricket_India_Crest.svg/1200px-Cricket_India_Crest.svg.png" alt="Logo" class="logo">
+        <div class="larger-font">
+        <h1>CricketGallery</h1></div>
+        <nav>
+            <ul class="menu">
+              <li ><a href="index.html">Home</a></li>
+                <li ><a href="about.html">About</a></li>
+                 <li><a href="livescore.html" class="style2">Live Score !!!</a></li>
+                 <li><a href="fixtures.html">Fixtures</a></li>
+                 <li><a href="jerry.html">CHAT</a></li>
+                 
+                  <!--<li><a href="livestream.html" class="style2">Live Stream</a></li>-->
+            <li class="dropdown">
+                <a href="#" >ICC Corner &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="icc.html">ICC News</a></li>
+                    <li><a href="ranking.html">Rankings</a></li>
+                  <li><a href="standings.html">Standings</a></li>
+                    </ul>
+                  </li>
+                <li><a href="#contact-us">Contact Us</a></li>
+
+            </ul>
+          </nav>
+        </header>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input id="emailInput" type="email" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input id="passwordInput" type="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input id="rememberCheckbox" type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
+                    </div>
+                    <button id="loginButton" onclick="login(event)">Log in</button>
+                    <div class="register">
+                        <p>Don't have an account? <a href="#">Register</a></p>
+                        <b><p> *We are currently out of Service</p> </b>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+      function login(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the form data
+        var email = document.getElementById("emailInput").value;
+        var password = document.getElementById("passwordInput").value;
+        var rememberMe = document.getElementById("rememberCheckbox").checked;
+
+        // Perform client-side validation (example)
+        if (!email || !password) {
+          alert("Please enter both email and password.");
+          return;
+        }
+
+        // TODO: Send the form data to the server for server-side validation and processing
+        // You will need to implement the server-side code to handle the login request
+
+        // Example: Display the form data for testing
+        console.log("Email:", email);
+        console.log("Password:", password);
+        console.log("Remember Me:", rememberMe);
+
+        // Store the email in localStorage
+        localStorage.setItem("loggedInUserEmail", email);
+
+        // Redirect to index.html with email query parameter
+        var encodedEmail = encodeURIComponent(email);
+        var redirectUrl = "index.html?email=" + encodedEmail;
+        window.location.href = redirectUrl;
+      }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
