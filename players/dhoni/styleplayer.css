@@ -1,0 +1,422 @@
+#video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  overflow: hidden;
+}
+
+#video-background {
+  width: 100%;
+  height: auto;
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-attachment: fixed;
+
+  margin: 0;
+  padding: 0;
+}
+.logo {
+position: absolute;
+top: 10px;
+left: 10px;
+width: 160px; /* Adjust the width and height as needed */
+height: 138px;
+z-index: 1; /* Make the image appear above the marquee text */
+}
+.larger-font {
+font-size: 28px; /* Adjust the font size value as desired */
+}
+
+header {
+  background-color: darkblue;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+ header h1 {
+  margin: 0;
+  color:white;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 16px;
+  color: #333;
+}
+#contact-us {
+  background-color: darkblue;
+  color: white;
+  padding: 40px;
+}
+
+#contact-us h2 {
+  margin-top: 0;
+}
+
+#contact-us a {
+  color: white;
+}
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  position: relative;
+
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #ffffff;
+  color:blue;
+  border-color: blue;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #6f74ad;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  z-index: 1; 
+  animation: fadeInDown 0.3s ease;
+
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.section {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.section1 {
+  background-color: rgba(242, 242, 242, 0.5);
+  border: 1px solid #ccc;
+  overflow: hidden; /* To clear the floats */
+  position: relative;    
+}
+.image-container {
+  float: left;
+  margin-right: 20px; /* Adjust the spacing between image and text */
+}
+.textbox{
+  overflow: hidden;
+  margin-top: 1px;
+  margin-left: 500px;
+  font-size: 28px;
+}
+.text-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.oval-image {
+  border-radius: 50%;
+  background-color: #ccc;
+  width: 200px;
+  
+}
+
+table {
+  margin-left: 25px;
+  margin-top: 200px;
+  border-collapse: collapse;
+  font-size: 18px;
+  padding: 10px;
+}
+
+th, td {
+  padding: 8px;
+}
+p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+p:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dob {
+  background-color: #ffcc80;
+}
+
+.role {
+  background-color: #b2dfdb;
+}
+
+.batting-style {
+  background-color: #ffd54f;
+}
+
+.bowling-style {
+  background-color: #81d4fa;
+}
+.favorites {
+  background-color: #f48fb1;
+}
+.shot-image{
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  height: 300px;
+
+
+  
+ 
+  
+}
+@keyframes myanim{
+  from{background-color: darkblue;}
+  to{background-color:red}
+}
+
+.style2{
+ border-radius:4px;
+ border-color: white;
+ animation-name: myanim;
+   animation-duration: 1s;
+   animation-iteration-count:infinite;
+   animation-direction: alternate;
+  
+}
+
+@media only screen and (max-width: 600px) {
+  #video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    overflow: hidden;
+  }
+  
+  #video-background {
+    width: 100%;
+    height: auto;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 85px; 
+    height: 80px;
+    z-index: 1; 
+  }
+  
+  .larger-font {
+    font-size: 25px;
+    padding-top: 65px;
+  }
+  
+  header {
+    background-color: darkblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  header h1 {
+    margin: 0;
+    color:white;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+  }
+  
+  section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  section p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  #contact-us {
+    background-color: darkblue;
+    color: white;
+    padding: 40px;
+  }
+  
+  #contact-us h2 {
+    margin-top: 0;
+  }
+  
+  #contact-us a {
+    color: white;
+  }
+  
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 25px;
+  }
+  
+  .menu li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  
+  .menu li a:hover {
+    background-color: #ffffff;
+    color: blue;
+    border-color: blue;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #6f74ad;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    z-index: 1;
+    animation: fadeInDown 0.3s ease;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .section {
+    padding: 2.5px;
+    margin-bottom: 10px;
+  }
+  
+  .section1 {
+    background-color: rgba(242, 242, 242, 0.5);
+    border: 1px solid #ccc;
+    overflow: hidden; 
+    position: relative;
+  }
+  
+  .image-container {
+    float: left;
+    margin-right: 10px;
+  }
+  .tablee{
+    font-size: 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+
+  .shot-image{
+  float: none;
+  margin-left: -240px;
+  height: 100px;
+  }
+}
